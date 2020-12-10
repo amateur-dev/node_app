@@ -14,13 +14,12 @@ const server = http.createServer((req, res) => {
   if (url === '/message' && method === 'POST') {
     const body = [];
     req.on('data', (chunk) => {
-      console.log(chunk);
       body.push(chunk);
     });
     req.on('end', () => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
-      fs.writeFileSync('message.txt', message);
+      fs.appendFileSync('message.txt', message); // minor change to the udemy code.  I am doing append message - which is adding the message to the file instead of replacing it.
     });
     res.statusCode = 302;
     res.setHeader('Location', '/');
