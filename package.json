@@ -4,13 +4,9 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "expres": "0.0.5",
-    "express": "^4.17.1",
-    "s": "^1.0.0"
+
   },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
-  },
+  "devDependencies": {"nodemon": "^2.0.6"},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
